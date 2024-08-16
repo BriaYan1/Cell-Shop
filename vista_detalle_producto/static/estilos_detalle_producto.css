@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Sora:wght@400;600;700;800&display=swap');
+
+:root{
+    --color-primary: #515151;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html {
+    font-size: 62.5%;
+    font-family: sans-serif;
+}
+body{
+    max-width: 90%;
+    margin: 0 auto;
+    font-family: 'Poppins';
+    background-color: #ffffff;
+}
+
+.menu{
+    height: 10rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left-menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.fa-mobile-screen-button{
+    margin-left: 2rem;
+    font-size: 4rem;
+}
+
+.right-menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.fa-cart-shopping{
+    font-size: 4rem;
+    color: #8B3DFF;
+    cursor: pointer;
+}
+
+.menu-line{
+    width: 100%;
+    border: 1px solid #7A2DE6;
+    -webkit-box-shadow: 0px 5px 15px 0px rgba(122,45,230,1);
+    -moz-box-shadow: 0px 5px 15px 0px rgba(122,45,230,1);
+    box-shadow: 0px 5px 15px 0px rgba(122,45,230,1);
+}
+
+.principal_frame{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.cell_img{
+    max-width: 80%;
+    margin: 0 auto;
+    margin: 4rem;
+}
+
+.description_container, .description_container-list{
+    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.description_container-title{
+    font-size: 4rem;
+    margin-left: -2rem;
+    padding-bottom: 2rem;
+}
+
+.description_container-description{
+    font-size: 1.5rem;
+}
+
+.button_price{
+    padding-top: 4rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.card-button{
+    border-radius: 1rem;
+    width: 18rem;
+    height: 4rem;
+    text-decoration: none;
+    cursor: pointer;
+    font-family: 'Poppins';
+    font-weight: bold;
+    font-size: 1.8rem;
+    margin-left: -2rem;
+}
+
+.card-button:hover {
+    background-color: #F0F0F0;
+    transition: 0.2s ease-in;
+}
+
+.price{
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.separation_line{
+    width: 0.3rem;
+    background-color: black;
+    height: 50rem;
+}
+
+@media (max-width: 1030px){
+
+    .principal_frame{
+        flex-direction: column;
+    }
+
+    .separation_line{
+        width: 70rem;
+        background-color: black;
+        height: 0.3rem;
+    }
+
+    .description_container-title{
+        padding-top: 4rem;
+    }
+}
+
+@media (max-width: 768px){
+    .principal_frame{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .logo{
+        width: 10rem;
+    }
+    
+    .description_container-title{
+        font-size: 3rem;
+        margin-left: -2rem;
+        padding-bottom: 2rem;
+    }
+    
+    .button_price{
+        padding-top: 2rem;
+        padding-bottom: 4rem;
+    }
+    
+    .separation_line{
+        width: 35rem;
+        background-color: black;
+        height: 0.3rem;
+    }
+}

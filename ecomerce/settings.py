@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'vista_principal',
-    'vista_detalle_producto'
+    'vista_detalle_producto',
+    'vista_carrito'
 ]
 
 MIDDLEWARE = [

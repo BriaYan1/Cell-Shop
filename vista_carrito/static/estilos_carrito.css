@@ -1,0 +1,300 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Sora:wght@400;600;700;800&display=swap');
+
+:root{
+    --color-primary: #515151;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: sans-serif;
+}
+
+body {
+    max-width: 90%;
+    margin: 0 auto;
+    font-family: 'Poppins', sans-serif;
+    background-color: #ffffff;
+}
+
+header {
+    margin-bottom: 2rem;
+}
+
+.menu {
+    height: 10rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.right-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.fa-cart-shopping {
+    font-size: 4rem;
+    color: #8B3DFF;
+    cursor: pointer;
+}
+
+.menu-line {
+    width: 100%;
+    border: 1px solid #7A2DE6;
+    box-shadow: 0px 5px 15px 0px rgba(122, 45, 230, 1);
+}
+
+button {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: #8B3DFF;
+    color: white;
+    font-size: 1.6rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 1.5rem;
+}
+
+button:hover {
+    background-color: #7A2DE6;
+}
+
+h2 {
+    margin: 2rem 0;
+    font-size: 2.4rem;
+}
+
+main{
+    margin-bottom: 4rem;
+}
+
+.cart-items {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.total_carrito {
+    padding: 2rem;
+    border: 1px solid #7A2DE6;
+    border-radius: 0.5rem;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 89rem;
+}
+
+.titulo-total{
+    font-size: 2.4rem;
+    font-weight: bold;
+}
+
+.subtotal {
+    margin-top: 1.5rem;
+    font-weight: bold;
+    display: grid;
+    grid-template-columns: 1fr auto;
+}
+
+#subtotal{
+    font-weight: 400;
+}
+
+.total_a-pagar {
+    margin-top: 1.5rem;
+    font-weight: bold;
+    display: grid;
+    grid-template-columns: 1fr auto;
+}
+
+.total_a-pagar p,
+.subtotal p {
+    font-size: 1.6rem;
+}
+
+@media (max-width: 768px){
+    .cart-item{
+        display: grid !important;
+        grid-template-columns: 1fr;
+    }
+
+    .cart-header{
+        display: none !important;
+    }
+}
+
+@media (max-width: 1030px) {
+
+    .logo {
+        width: 10rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    button {
+        width: 100%;
+        font-size: 1.4rem;
+    }
+
+    .total_a-pagar p,
+    .subtotal p {
+        font-size: 1.4rem;
+    }
+
+    .total_carrito {
+        margin: 0 auto;
+        width: 90%;
+    }
+
+    .continuar-comprando{
+        width: auto;
+    }
+
+    .cart-container{
+        max-width: 100% !important;
+        margin: 0;
+    }
+
+    .aux-precio{
+        margin-left: 8rem !important; 
+    }
+
+    .cart-item{
+        text-align: center;
+    }
+
+}
+
+.cart-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0;
+    border: 1px solid #ccc;
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+.product-image {
+    width: 120px;
+    height: auto;
+}
+
+.product-info {
+    flex-grow: 1;
+    margin-left: 1rem;
+}
+
+.product-name {
+    font-size: 2rem;
+    margin: 0;
+}
+
+.product-details {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.5rem; 
+}
+
+.product-quantity, 
+.product-price, .product-description {
+    font-size: 1.8rem;
+    margin: 0.5rem 0;
+}
+
+.cart-container {
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.cart-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.product-image {
+    width: 100px;
+    height: auto;
+}
+
+.product-price, 
+.product-quantity, 
+.product-subtotal {
+    font-size: 1.6rem;
+    margin: 0 1rem;
+}
+
+.remove-item {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #000000;
+    font-size: 1.6rem; 
+}
+
+.total-carrito {
+    margin-top: 2rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.cart-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    padding: 1rem 0;
+}
+
+.aux-producto{
+    margin-left: 2rem;
+}
+
+.aux-description{
+    margin-left: 3rem;
+}
+
+.aux-precio{
+    margin-left: 8.5rem;
+}
+
+.aux-cant{
+    margin-left: -0.2rem;
+}
+
+.aux-subtotal{
+    margin-left: -3rem;
+}
+
+.header-item {
+    display: flex;
+    font-size: 1.6rem;
+}
+
+.cart-table{
+    width: 100%;
+}

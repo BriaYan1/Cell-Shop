@@ -1,0 +1,90 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu carrito de Compa</title>
+    <link rel="stylesheet" href="{% static '/estilos_carrito.css' %}">
+    <link rel="icon" href="{% static 'logo/logo.png' %}" type="icono" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="menu">
+            <div class="left-menu">
+                <img src="{% static 'logo/logo.png' %}" alt="" class="logo">
+            </div>
+
+            <div class="right-menu">
+                <i class="fa-solid fa-cart-shopping"></i>
+            </div> 
+        </nav>
+
+        <hr class="menu-line">
+    </header>
+
+    <main>
+        <button class="continuar-comprando">Continuar comprando</button>
+
+        <div class="cart-container">
+            <h2>Tu carrito</h2>
+            <table class="cart-table">
+                <thead>
+                    <tr class="cart-header">
+                        <th class="header-item aux-producto">Producto</th>
+                        <th class="header-item aux-description">Descripción</th>
+                        <th class="header-item aux-precio">Precio</th>
+                        <th class="header-item aux-cant">Cantidad</th>
+                        <th class="header-item aux-subtotal">Subtotal</th>
+                    </tr>
+                </thead>
+                <tbody class="cart-items">
+                    <tr class="cart-item">
+                        <td>
+                            <img src="{% static 'imagenes/Celular-Tecno-Spark-20.png' %}" alt="Tecno Camon 30" class="product-image">
+                        </td>
+                        <td class="product-description">Tecno Camon 30 256gb/8gb</td>
+                        <td class="product-price">$135.00</td>
+                        <td class="product-quantity">Cant. 2</td>
+                        <td class="product-subtotal">Subtotal: $270.00</td>
+                        <td>
+                            <button class="remove-item">
+                                <i class="fa-solid fa-trash-alt"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr class="cart-item">
+                        <td>
+                            <img src="{% static 'imagenes/Honor-magic-6-lite-verde.png' %}" alt="Honor Magic 6 Lite" class="product-image">
+                        </td>
+                        <td class="product-description">Samsung Galaxy A15 128gb/6gb</td>
+                        <td class="product-price">$315.00</td>
+                        <td class="product-quantity">Cant. 1</td>
+                        <td class="product-subtotal">Subtotal: $315.00</td>
+                        <td>
+                            <button class="remove-item">
+                                <i class="fa-solid fa-trash-alt"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        </div>
+        <div class="total_carrito">
+            <p class="titulo-total">Total del carrito</p>
+            <div class="subtotal">
+                <p>Subtotal </p>
+                <p id="subtotal">$ 585.00</p>
+            </div>
+            <div class="total_a-pagar">
+                <p>Total</p>
+                <p id="total">$ 585.00</p>
+            </div>
+            <button class="realizar_compra">Finalizar compra</button>
+        </div>
+    </main>
+</body>
+</html>

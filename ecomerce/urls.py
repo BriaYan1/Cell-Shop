@@ -20,5 +20,5 @@ from django.urls import path, include
 urlpatterns = [
     path('', include('vista_principal.urls')),
     path('detalle/', include('vista_detalle_producto.urls')),
-    path('comprar/', include('vista_procesar_compra.urls'))
+    path('carrito/', include('vista_carrito.urls')),
 ]

@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'vista_principal',
     'vista_detalle_producto',
-    'vista_procesar_compra'
+    'vista_carrito'
 ]
 
 MIDDLEWARE = [

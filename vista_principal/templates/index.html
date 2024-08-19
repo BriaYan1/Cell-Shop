@@ -30,7 +30,7 @@
             <div class="card">
             
                 <div class="img-container">
-                    <img src="{% static 'imagenes/Honor-magic-6-lite-verde.png' %}" alt="Tecno-Camon-30" class="cell-img">
+                    <img src="{{item.imagen.url}}" alt="Tecno-Camon-30" class="cell-img">
                 </div>
                 <p class="cell-name">{{item.nombre}}</p>
                 <div class="container">
@@ -38,7 +38,7 @@
                     <button type="button" class="card-button">Agregar al carrito</button></a>
                     <div class="container-inferior">
                         <a href="*" target="_blank"><button type="button" class="ver-button">Ver producto</button></a>
-                        <p class="price">{{item.precio|floatformat:2}}</p>
+                        <p class="price">$ {{item.precio|floatformat:2}}</p>
                     </div>
                 </div>
             </div>

@@ -23,6 +23,7 @@ class producto(models.Model):
     android = models.CharField(max_length=200, null=True)
     color = models.CharField(max_length=200, null=True)
     cantidad = models.IntegerField()
+    imagen = models.ImageField(null=True, blank=True)
 
     def __str__(self):
         return str(self.nombre)

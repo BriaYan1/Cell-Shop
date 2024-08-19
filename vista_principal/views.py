@@ -1,8 +1,10 @@
 from django.shortcuts import render
+from .models import *
 
 # Create your views here.
 def vista_inicio(request):
-    return render(request, 'index.html')
+    productos = producto.objects.all()
+    return render(request, 'index.html', {'producto': productos})
 
 def vista_carrito(request):
     return render(request, 'vista_carrito.html')

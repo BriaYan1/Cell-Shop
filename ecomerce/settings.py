@@ -38,9 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'vista_principal',
-    'vista_detalle_producto',
-    'vista_carrito'
+    'vista_principal'
 ]
 
 MIDDLEWARE = [
@@ -120,8 +118,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATICFILES = [os.path.join(BASE_DIR, 'vista_principal/static')]
-STATICFILES = [os.path.join(BASE_DIR, 'vista_detalle_producto/static')]
-STATICFILES = [os.path.join(BASE_DIR, 'vista_procesar_compra/static')]
 
 STATIC_URL = 'static/'
 

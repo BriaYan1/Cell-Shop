@@ -47,11 +47,6 @@ body{
     position: relative;
 }
 
-.count{
-    border: 1px solid black;
-    border-radius: 50%;
-}
-
 .fa-cart-shopping{
     font-size: 4rem;
     color: #8B3DFF;

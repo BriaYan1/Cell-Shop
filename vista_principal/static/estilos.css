@@ -44,6 +44,12 @@ body{
     justify-content: center;
     align-items: center;
     gap: 1rem;
+    position: relative;
+}
+
+.count{
+    border: 1px solid black;
+    border-radius: 50%;
 }
 
 .fa-cart-shopping{

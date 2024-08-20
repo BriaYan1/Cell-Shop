@@ -47,22 +47,25 @@
                         </td>
                         <td class="product-description">Tecno Camon 30 256gb/8gb</td>
                         <td class="product-price">$135.00</td>
-                        <td class="product-quantity">Cant. 2</td>
-                        <td class="product-subtotal">Subtotal: $270.00</td>
-                        <td>
-                            <button class="remove-item">
-                                <i class="fa-solid fa-trash-alt"></i>
-                            </button>
+                        <td class="product-quantity">
+                            <div class="cantidad_botones" style="
+                            display: flex;
+                            gap: 2rem;
+                            justify-content: center;
+                            align-items: center;
+                            ">
+                                <button type="button" onclick="decrementar()" style="
+                                margin-top: 0;
+                                width: 50px;
+                                ">-</button>
+                                <p class="cant">2</p>
+                                <button type="button" onclick="incrementar()" style="
+                                margin-top: 0;
+                                width: 50px;
+                                ">+</button>
+                            </div>
                         </td>
-                    </tr>
-                    <tr class="cart-item">
-                        <td>
-                            <img src="{% static 'imagenes/Honor-magic-6-lite-verde.png' %}" alt="Honor Magic 6 Lite" class="product-image">
-                        </td>
-                        <td class="product-description">Samsung Galaxy A15 128gb/6gb</td>
-                        <td class="product-price">$315.00</td>
-                        <td class="product-quantity">Cant. 1</td>
-                        <td class="product-subtotal">Subtotal: $315.00</td>
+                        <td class="product-subtotal"> $270.00</td>
                         <td>
                             <button class="remove-item">
                                 <i class="fa-solid fa-trash-alt"></i>

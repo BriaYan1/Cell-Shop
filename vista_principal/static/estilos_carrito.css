@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Sora:wght@400;600;700;800&display=swap');
 
-:root{
+:root {
     --color-primary: #515151;
 }
 
@@ -80,7 +80,7 @@ h2 {
     font-size: 2.4rem;
 }
 
-main{
+main {
     margin-bottom: 4rem;
 }
 
@@ -100,7 +100,7 @@ main{
     margin-left: 89rem;
 }
 
-.titulo-total{
+.titulo-total {
     font-size: 2.4rem;
     font-weight: bold;
 }
@@ -112,7 +112,7 @@ main{
     grid-template-columns: 1fr auto;
 }
 
-#subtotal{
+#subtotal {
     font-weight: 400;
 }
 
@@ -128,13 +128,13 @@ main{
     font-size: 1.6rem;
 }
 
-@media (max-width: 768px){
-    .cart-item{
+@media (max-width: 768px) {
+    .cart-item {
         display: grid !important;
         grid-template-columns: 1fr;
     }
 
-    .cart-header{
+    .cart-header {
         display: none !important;
     }
 }
@@ -164,20 +164,20 @@ main{
         width: 90%;
     }
 
-    .continuar-comprando{
+    .continuar-comprando {
         width: auto;
     }
 
-    .cart-container{
+    .cart-container {
         max-width: 100% !important;
         margin: 0;
     }
 
-    .aux-precio{
-        margin-left: 8rem !important; 
+    .aux-precio {
+        margin-left: 8rem !important;
     }
 
-    .cart-item{
+    .cart-item {
         text-align: center;
     }
 
@@ -217,13 +217,19 @@ main{
 .product-details {
     display: flex;
     justify-content: space-between;
-    margin-top: 0.5rem; 
+    margin-top: 0.5rem;
 }
 
-.product-quantity, 
-.product-price, .product-description {
+.product-quantity,
+.product-price,
+.product-description {
     font-size: 1.8rem;
     margin: 0.5rem 0;
+}
+
+.cantidad_input {
+    width: 50px;
+    height: 30px;
 }
 
 .cart-container {
@@ -243,8 +249,8 @@ main{
     height: auto;
 }
 
-.product-price, 
-.product-quantity, 
+.product-price,
+.product-quantity,
 .product-subtotal {
     font-size: 1.6rem;
     margin: 0 1rem;
@@ -255,7 +261,7 @@ main{
     border: none;
     cursor: pointer;
     color: #000000;
-    font-size: 1.6rem; 
+    font-size: 1.6rem;
 }
 
 .total-carrito {
@@ -270,23 +276,23 @@ main{
     padding: 1rem 0;
 }
 
-.aux-producto{
+.aux-producto {
     margin-left: 2rem;
 }
 
-.aux-description{
+.aux-description {
     margin-left: 3rem;
 }
 
-.aux-precio{
+.aux-precio {
     margin-left: 8.5rem;
 }
 
-.aux-cant{
+.aux-cant {
     margin-left: -0.2rem;
 }
 
-.aux-subtotal{
+.aux-subtotal {
     margin-left: -3rem;
 }
 
@@ -295,6 +301,6 @@ main{
     font-size: 1.6rem;
 }
 
-.cart-table{
+.cart-table {
     width: 100%;
 }

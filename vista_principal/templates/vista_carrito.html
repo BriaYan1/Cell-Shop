@@ -1,31 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}Carrito{% endblock %}
 {% load static %}
+{% block extra_styles %}
+    <link rel="stylesheet" href="{% static 'estilos_carrito.css' %}" />
+{% endblock %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tu carrito de Compa</title>
-    <link rel="stylesheet" href="{% static '/estilos_carrito.css' %}">
-    <link rel="icon" href="{% static 'logo/logo.png' %}" type="icono" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-</head>
-<body>
-    <header>
-        <nav class="menu">
-            <div class="left-menu">
-                <img src="{% static 'logo/logo.png' %}" alt="" class="logo">
-            </div>
-
-            <div class="right-menu">
-                <i class="fa-solid fa-cart-shopping"></i>
-            </div> 
-        </nav>
-
-        <hr class="menu-line">
-    </header>
-
-    <main>
+    {% block content %}
         <button class="continuar-comprando">Continuar comprando</button>
 
         <div class="cart-container">
@@ -56,7 +36,6 @@
                             ">
                                 <button type="button" onclick="decrementar()" style="
                                 margin-top: 0;
-                                width: 50px;
                                 ">-</button>
                                 <p class="cant">2</p>
                                 <button type="button" onclick="incrementar()" style="
@@ -88,6 +67,4 @@
             </div>
             <button class="realizar_compra">Finalizar compra</button>
         </div>
-    </main>
-</body>
-</html>
+    {% endblock %}

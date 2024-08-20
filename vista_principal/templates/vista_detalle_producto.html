@@ -1,59 +1,33 @@
-{% load static %}
+{% extends 'base.html' %} {% load static %} {% block extra_styles %}
+<link rel="stylesheet" href="{% static 'estilos_detalle_producto.css' %}" />
+{% endblock %} {% block title %}Detalle{% endblock %} {% block content %}
+<section class="principal_frame">
+  <div class="img_container">
+    <img
+      src="{% static 'imagenes/Tecno-Spark-Go-2024.png' %}"
+      alt="Tecno-Camon-30"
+      class="cell_img" />
+  </div>
+  <div class="separation_line"></div>
+  <div class="description_container">
+    <h2 class="description_container-title">Tecno Spark Go 2024</h2>
+    <ul class="description_container-list">
+      <li class="description_container-description">4 GB memoria RAM.</li>
+      <li class="description_container-description">128 GB almacenamiento.</li>
+      <li class="description_container-description">CPU 8 núcleos 2.0 GHz.</li>
+      <li class="description_container-description">Cámara trasera 13MP.</li>
+      <li class="description_container-description">Cámara frontal 8MP.</li>
+      <li class="description_container-description">Pantalla 6.6 pulgadas.</li>
+      <li class="description_container-description">Batería 5000 mAh.</li>
+      <li class="description_container-description">Android 12.</li>
+      <li class="description_container-description">Color Negro.</li>
+      <li class="description_container-description">Cantidad 5.</li>
+    </ul>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detalle del producto</title>
-    <link rel="stylesheet" href="{% static '/estilos_detalle_producto.css' %}">
-</head>
-<body>
-    <header>
-        <nav class="menu">
-            <div class="left-menu">
-                <img src="{% static 'logo/logo.png' %}" alt="" class="logo">
-            </div>
-
-            <div class="right-menu">
-                <i class="fa-solid fa-cart-shopping"></i>
-            </div>
-        </nav>
-        
-        <hr class="menu-line">
-    </header>
-
-    <main>
-        <section class="principal_frame">
-            <div class="img_container">
-                <img src="{% static 'imagenes/Tecno-Spark-Go-2024.png' %}" alt="Tecno-Camon-30" class="cell_img">
-            </div>
-            <div class="separation_line"></div>
-            <div class="description_container">
-                <h2 class="description_container-title">Tecno Spark Go 2024</h2>
-                <ul class="description_container-list">
-                    <li class="description_container-description">4 GB memoria RAM.</li>
-                    <li class="description_container-description">128 GB almacenamiento.</li>
-                    <li class="description_container-description">CPU 8 núcleos 2.0 GHz.</li>
-                    <li class="description_container-description">Cámara trasera 13MP.</li>
-                    <li class="description_container-description">Cámara frontal 8MP.</li>
-                    <li class="description_container-description">Pantalla 6.6 pulgadas.</li>
-                    <li class="description_container-description">Batería 5000 mAh.</li>
-                    <li class="description_container-description">Android 12.</li>
-                    <li class="description_container-description">Color Negro.</li>
-                    <li class="description_container-description">Cantidad 5.</li>
-                </ul>
-
-                <div class="button_price">
-                    <button type="button" class="card-button">Agregar al carrito</button>
-                    <p class="price">$ 85.00</p>
-                </div>
-            </div>
-
-            
-        </section>
-    </main>
-
-    <script src="https://kit.fontawesome.com/5a8265bcfc.js" crossorigin="anonymous"></script>
-</body>
-</html>
+    <div class="button_price">
+      <button type="button" class="card-button">Agregar al carrito</button>
+      <p class="price">$ 85.00</p>
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,84 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finalizar compra</title>
+    <link rel="stylesheet" href="{% static '/estilos_procesar_compra.css' %}">
+    <link rel="icon" href="{% static 'logo/logo.png' %}" type="icono" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="menu">
+            <div class="left-menu">
+                <img src="{% static 'logo/logo.png' %}" alt="" class="logo">
+            </div>
+
+            <div class="right-menu">
+                <i class="fa-solid fa-cart-shopping"></i>
+            </div> 
+        </nav>
+
+        <hr class="menu-line">
+    </header>
+
+    <main>
+        <button class="continuar-comprando">Continuar comprando</button>
+        <h2>Datos del cliente y envio</h2>
+
+        <div class="cart-container">
+            <form class="formulario">
+                    <div class="contenedor-campos">
+                        <div class="campo">
+                            <label>Nombre</label>
+                            <input class="inputs" type="text" placeholder="" required>
+                        </div>
+
+                        <div class="campo">
+                            <label>Teléfono</label>
+                            <input class="inputs" type="tel" placeholder="" required>
+                        </div>
+
+                        <div class="campo">
+                            <label>Correo</label>
+                            <input class="inputs" type="email" placeholder="" required>
+                        </div>
+                        <div class="campo">
+                            <label>Pais</label>
+                            <input class="inputs" type="text" placeholder="" required>
+                        </div>
+                        <div class="campo">
+                            <label>Estado</label>
+                            <input class="inputs" type="text" placeholder="" required>
+                        </div>
+                        <div class="campo">
+                            <label>Ciudad</label>
+                            <input class="inputs" type="text" placeholder="" required>
+                        </div>
+                        <div class="campo">
+                            <label>Direccion</label>
+                            <input class="inputs" type="text" placeholder="" required>
+                        </div>
+                    </div>
+            </form>
+
+            <div class="total_carrito">
+                <p class="titulo-total">Total del carrito</p>
+                <div class="subtotal">
+                    <p>Subtotal </p>
+                    <p id="subtotal">$ 585.00</p>
+                </div>
+                <div class="total_a-pagar">
+                    <p>Total</p>
+                    <p id="total">$ 585.00</p>
+                </div>
+                <button class="realizar_compra">Finalizar compra</button>
+            </div>
+
+        </div>
+    </main>
+</body>
+</html>

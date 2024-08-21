@@ -6,9 +6,7 @@ class cliente(models.Model):
     nombre = models.CharField(max_length=200, null=True)
     email = models.CharField(max_length=100, null=True)
     telefono = models.IntegerField( null=False)
-    pais = models.CharField(max_length=100, null=False)
-    estado = models.CharField(max_length=100, null=False)
-    ciudad = models.CharField(max_length=100, null=False)
+    direccion = models.CharField(max_length=500, null=False)
 
 class producto(models.Model):
     nombre = models.CharField(max_length=200, null=True)

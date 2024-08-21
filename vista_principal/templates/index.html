@@ -4,140 +4,21 @@
 
     {% block content %}
         <section class="principal-section">
+        {% for item in producto %}
             <div class="card">
                 <div class="img-container">
-                    <img src="{% static 'imagenes/Tecno-Camon-30.png' %}" alt="Tecno-Camon-30" class="cell-img">
+                    <img src="{{item.imagen.url}}" alt="{{item.nombre}}" class="cell-img">
                 </div>
-                <p class="cell-name">Tecno Camon 30 256gb/8gb</p>
+                <p class="cell-name">{{item.nombre}}</p>
                 <div class="container">
                     <hr class="separation-line">
                     <button type="button" class="card-button">Agregar al carrito</button></a>
                     <div class="container-inferior">
                         <a href="*" target="_blank"><button type="button" class="ver-button">Ver producto</button></a>
-                        <p class="price">$ 244.00</p>
+                        <p class="price">$ {{item.precio|floatformat:2}} </p>
                     </div>
                 </div>
             </div>
-
-            <div class="card">
-                <div class="img-container">
-                    <img src="{% static 'imagenes/Celular-Infinix-Hot 40i-8gb-dorado.png' %}" alt="Tecno-Camon-30" class="cell-img">
-                </div>
-                <p class="cell-name">Infinix Hot 40i 256gb/8gb</p>
-                <div class="container">
-                    <hr class="separation-line">
-                    <button type="button" class="card-button">Agregar al carrito</button></a>
-                    <div class="container-inferior">
-                        <a href="*" target="_blank"><button type="button" class="ver-button">Ver producto</button></a>
-                        <p class="price">$ 142.00</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="img-container">
-                    <img src="{% static 'imagenes/Celular-Tecno-Spark-20.png' %}" alt="Tecno-Camon-30" class="cell-img">
-                </div>
-                <p class="cell-name">Tecno Spark 20 256gb/8gb</p>
-                <div class="container">
-                    <hr class="separation-line">
-                    <button type="button" class="card-button">Agregar al carrito</button></a>
-                    <div class="container-inferior">
-                        <a href="*" target="_blank"><button type="button" class="ver-button">Ver producto</button></a>
-                        <p class="price">$ 135.00</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="img-container">
-                    <img src="{% static 'imagenes/Honor-magic-6-lite-verde.png' %}" alt="Tecno-Camon-30" class="cell-img">
-                </div>
-                <p class="cell-name">Honor Magic 6 lite 256gb/8gb</p>
-                <div class="container">
-                    <hr class="separation-line">
-                    <button type="button" class="card-button">Agregar al carrito</button></a>
-                    <div class="container-inferior">
-                        <a href="*" target="_blank"><button type="button" class="ver-button">Ver producto</button></a>
-                        <p class="price">$ 315.00</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="img-container">
-                    <img src="{% static 'imagenes/Honor-X8b-azul-petroleo.png' %}" alt="Tecno-Camon-30" class="cell-img">
-                </div>
-                <p class="cell-name">Honor X8b 256gb/8gb</p>
-                <div class="container">
-                    <hr class="separation-line">
-                    <button type="button" class="card-button">Agregar al carrito</button></a>
-                    <div class="container-inferior">
-                        <a href="*" target="_blank"><button type="button" class="ver-button">Ver producto</button></a>
-                        <p class="price">$ 237.00</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="img-container">
-                    <img src="{% static 'imagenes/Samsung-Galaxy-A15-5g.png' %}" alt="Tecno-Camon-30" class="cell-img">
-                </div>
-                <p class="cell-name">Samsung Galaxy A15 128gb/6gb</p>
-                <div class="container">
-                    <hr class="separation-line">
-                    <button type="button" class="card-button">Agregar al carrito</button></a>
-                    <div class="container-inferior">
-                        <a href="*" target="_blank"><button type="button" class="ver-button">Ver producto</button></a>
-                        <p class="price">$ 139.00</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="img-container">
-                    <img src="{% static 'imagenes/Celular-Xiaomi-Redmi-13c.png' %}" alt="Tecno-Camon-30" class="cell-img">
-                </div>
-                <p class="cell-name">Xiaomi Redmi 13c 256gb/8gb</p>
-                <div class="container">
-                    <hr class="separation-line">
-                    <button type="button" class="card-button">Agregar al carrito</button></a>
-                    <div class="container-inferior">
-                        <a href="*" target="_blank"><button type="button" class="ver-button">Ver producto</button></a>
-                        <p class="price">$ 139.00</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="img-container">
-                    <img src="{% static 'imagenes/Motorola-Moto-G54-5g.png' %}" alt="Tecno-Camon-30" class="cell-img">
-                </div>
-                <p class="cell-name">Motorola Moto G54 256gb/8gb</p>
-                <div class="container">
-                    <hr class="separation-line">
-                    <button type="button" class="card-button">Agregar al carrito</button></a>
-                    <div class="container-inferior">
-                        <a href="*" target="_blank"><button type="button" class="ver-button">Ver producto</button></a>
-                        <p class="price">$ 189.00</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="img-container">
-                    <img src="{% static 'imagenes/Tecno-Spark-Go-2024.png' %}" alt="Tecno-Camon-30" class="cell-img">
-                </div>
-                <p class="cell-name">Tecno Spark Go 2024 64gb/3gb</p>
-                <div class="container">
-                    <hr class="separation-line">
-                    <button type="button" class="card-button">Agregar al carrito</button></a>
-                    <div class="container-inferior">
-                        <a href="*" target="_blank"><button type="button" class="ver-button">Ver producto</button></a>
-                        <p class="price">$ 95.00</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+        {% endfor %}
     </section>
     {% endblock %}

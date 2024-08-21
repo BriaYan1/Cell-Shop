@@ -121,6 +121,10 @@ STATICFILES = [os.path.join(BASE_DIR, 'vista_principal/static')]
 
 STATIC_URL = 'static/'
 
+MEDIA_URL ='/imagenes/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static/imagenes')
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 

@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% block title %}Carrito{% endblock %}
+{% load static %}
+{% block extra_styles %}
+    <link rel="stylesheet" href="{% static 'estilos_carrito.css' %}" />
+{% endblock %}
+
+    {% block content %}
+        <button class="continuar-comprando">Continuar comprando</button>
+
+        <div class="cart-container">
+            <h2>Tu carrito</h2>
+            <table class="cart-table">
+                <thead>
+                    <tr class="cart-header">
+                        <th class="header-item aux-producto">Producto</th>
+                        <th class="header-item aux-description">Descripción</th>
+                        <th class="header-item aux-precio">Precio</th>
+                        <th class="header-item aux-cant">Cantidad</th>
+                        <th class="header-item aux-subtotal">Subtotal</th>
+                    </tr>
+                </thead>
+
+                <tbody class="cart-items">
+                {% if items %}
+    {% for item in items %}
+        <tr class="cart-item">
+            <td>
+                <img src="{{ item.producto.imagen.url }}" alt="Producto" class="product-image">
+            </td>
+            <td class="product-description">{{ item.producto.nombre }}</td>
+            <td class="product-price">{{ item.producto.precio|floatformat:2 }}</td>
+            <td class="product-quantity">
+                <div class="cantidad_botones" style="
+                display: flex;
+                gap: 2rem;
+                justify-content: center;
+                align-items: center;">
+                    <button type="button" onclick="decrementar()" style="margin-top: 0;">-</button>
+                    <p class="cant">{{ item.cantidad }}</p>
+                    <button type="button" onclick="incrementar()" style="margin-top: 0; width: 50px;">+</button>
+                </div>
+            </td>
+            <td class="product-subtotal">{{ item.producto.precio }}</td>
+            <td>
+                <button class="remove-item">
+                    <i class="fa-solid fa-trash-alt"></i>
+                </button>
+            </td>
+        </tr>
+    {% endfor %}
+{% else %}
+    <tr>
+        <td colspan="6">No hay productos en el carrito.</td>
+    </tr>
+{% endif %}
+                </tbody>
+                
+            </table>
+        </div>
+        </div>
+        <div class="total_carrito">
+            <p class="titulo-total">Total del carrito</p>
+            <div class="subtotal">
+                <p>Subtotal </p>
+                <p id="subtotal">$ 585.00</p>
+            </div>
+            <div class="total_a-pagar">
+                <p>Total</p>
+                <p id="total">$ 585.00</p>
+            </div>
+            <button class="realizar_compra">Finalizar compra</button>
+        </div>
+    {% endblock %}

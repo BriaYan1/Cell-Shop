@@ -20,4 +20,11 @@ def vista_detalle_producto(request):
     return render(request, 'vista_detalle_producto.html')
 
 def vista_procesar_compra(request):
-    return render(request, 'vista_procesar_compra.html')
+
+    cliente = request.user.cliente
+    orden, created = Orden.objects.get_or_create(cliente=cliente, completado=False)
+    items = orden.order_items.all()
+
+    total_carrito = sum([item.get_total for item in items])
+
+    return render(request, 'vista_procesar_compra.html', {'items': items, 'orden': orden, 'total_carrito': total_carrito,})

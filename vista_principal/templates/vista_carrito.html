@@ -6,7 +6,7 @@
 {% endblock %}
 
     {% block content %}
-        <button class="continuar-comprando">Continuar comprando</button>
+        <button class="realizar_compra" onclick="location.href='{% url 'vista_inicio' %}'">Continuar Comprando</button>
 
         <div class="cart-container">
             <h2>Tu carrito</h2>
@@ -68,6 +68,6 @@
                 <p>Total</p>
                 <p id="total">$ {{ total_carrito|floatformat:2 }}</p>
             </div>
-            <button class="realizar_compra">Finalizar compra</button>
+            <button class="realizar_compra" onclick="location.href='{% url 'vista_procesar_compra' %}'">Finalizar compra</button>
         </div>
     {% endblock %}

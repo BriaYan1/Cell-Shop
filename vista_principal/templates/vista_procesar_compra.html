@@ -1,7 +1,11 @@
 {% extends 'base.html' %} {% load static %} {% block extra_styles %}
 <link rel="stylesheet" href="{% static 'estilos_procesar_compra.css' %}" />
 {% endblock %} {% block title %}Comprar{% endblock %} {% block content %}
-<button class="continuar-comprando">Continuar comprando</button>
+<button
+  class="realizar_compra"
+  onclick="location.href='{% url 'vista_inicio' %}'">
+  Continuar Comprando
+</button>
 <h2>Datos del cliente y envio</h2>
 
 <div class="cart-container">
@@ -44,11 +48,11 @@
     <p class="titulo-total">Total del carrito</p>
     <div class="subtotal">
       <p>Subtotal</p>
-      <p id="subtotal">$ 585.00</p>
+      <p id="subtotal">$ {{ total_carrito|floatformat:2 }}</p>
     </div>
     <div class="total_a-pagar">
       <p>Total</p>
-      <p id="total">$ 585.00</p>
+      <p id="total">$ {{ total_carrito|floatformat:2 }}</p>
     </div>
     <button class="realizar_compra">Finalizar compra</button>
   </div>

@@ -14,29 +14,35 @@
     <header>
       <nav class="menu">
         <div class="left-menu">
-          <img src="{% static 'logo/logo.png' %}" alt="" class="logo" />
+          <a href="{% url 'vista_inicio' %}">
+            <img src="{% static 'logo/logo.png' %}" alt="" class="logo" />
+          </a>
         </div>
 
         <div class="right-menu">
-          <i class="fa-solid fa-cart-shopping"></i>
-          <p
-            class="count"
-            style="
-              font-size: 2rem;
-              font-weight: bold;
-              border-radius: 50%;
-              border: 1px solid red;
-              width: 3rem;
-              height: 3rem;
-              text-align: center;
-              position: absolute;
-              top: 8%;
-              background-color: red;
-              color: white;
-              margin-left: 5rem;
-            ">
-            0
-          </p>
+          <a
+            href="{% url 'vista_carrito' %}"
+            style="text-decoration: none; color: inherit">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <p
+              class="count"
+              style="
+                font-size: 2rem;
+                font-weight: bold;
+                border-radius: 50%;
+                border: 1px solid red;
+                width: 3rem;
+                height: 3rem;
+                text-align: center;
+                position: absolute;
+                top: 8%;
+                background-color: red;
+                color: white;
+                margin-left: 3rem;
+              ">
+              0
+            </p>
+          </a>
         </div>
       </nav>
 

@@ -12,7 +12,7 @@
                 <p class="cell-name">{{item.nombre}}</p>
                 <div class="container">
                     <hr class="separation-line">
-                    <button type="button" class="card-button">Agregar al carrito</button></a>
+                    <button data-product={{item.id}} data-action="add" type="button" class="card-button update-cart">Agregar al carrito</button></a>
                     <div class="container-inferior">
                         <a href="*" target="_blank"><button type="button" class="ver-button">Ver producto</button></a>
                         <p class="price">$ {{item.precio|floatformat:2}} </p>

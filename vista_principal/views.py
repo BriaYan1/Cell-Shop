@@ -32,28 +32,40 @@ def vista_procesar_compra(request):
     return render(request, 'vista_procesar_compra.html', {'items': items, 'orden': orden, 'total_carrito': total_carrito,})
 
 def updateItem(request):
-    data = json.loads(request.body)
-    productId = data['productId']
-    action = data['action']
+    if request.method == 'POST':
+        data = json.loads(request.body)
+        productId = data.get('productId')
+        action = data.get('action')
 
-    print('Action:', action)
-    print('productId', productId)
+        # Validar que se recibieron productId y action
+        if not productId or not action:
+            return JsonResponse({'error': 'Faltan datos'}, status=400)
 
-    cliente = request.user.cliente
-    product = Producto.objects.get(id=productId)
-    orden, created = Orden.objects.get_or_create(cliente=cliente, completado=False)
+        try:
+            product = Producto.objects.get(id=productId)
+        except Producto.DoesNotExist:
+            return JsonResponse({'error': 'Producto no encontrado'}, status=404)
 
-    OrdenItems, created = OrdenItems.objects.get_or_create(orden=orden, product=product)
+        cliente = request.user.cliente
+        orden, created = Orden.objects.get_or_create(cliente=cliente, completado=False)
+        orden_item, created = OrdenItems.objects.get_or_create(orden=orden, producto=product)
 
-    if action == 'add':
-        OrdenItems.cantidad = (OrdenItems.cantidad + 1)
-    elif action == 'remove':
-        OrdenItems.cantidad = (OrdenItems.cantidad - 1)
+        if action == 'add':
+            orden_item.cantidad += 1
+        elif action == 'remove':
+            orden_item.cantidad -= 1
 
-    OrdenItems.save()
+        # Evitar cantidades negativas
+        if orden_item.cantidad < 0:
+            orden_item.cantidad = 0
 
-    if OrdenItems.cantidad <= 0:
-        OrdenItems.delete()
+        orden_item.save()
+
+        # Eliminar el item si la cantidad es 0
+        if orden_item.cantidad == 0:
+            orden_item.delete()
+
+        return JsonResponse({'message': 'Producto actualizado', 'cantidad': orden_item.cantidad}, safe=False)
+
+    return JsonResponse({'error': 'Método no permitido'}, status=405)
     
-        
-    return JsonResponse('El producto fue agregado', safe=False)

@@ -40,7 +40,7 @@
                 color: white;
                 margin-left: 3rem;
               ">
-              0
+              {{ total_productos }}
             </p>
           </a>
         </div>
@@ -55,27 +55,29 @@
       src="https://kit.fontawesome.com/5a8265bcfc.js"
       crossorigin="anonymous"></script>
 
-      <script type="text/javascript" src="{% static 'js/carrito.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/carrito.js' %}"></script>
 
-      <script type="text/javascript">
-        var user= '{{request.user}}'
+    <script type="text/javascript">
+      var user = "{{request.user}}";
 
-        function getToken(name) {
-          var cookieValue = null;
-          if (document.cookie && document.cookie !== '') {
-            var cookies = document.cookie.split(';');
-            for(var i = 0; i < cookies.length; i++) {
-              var cookie = cookies[i].trim();
+      function getToken(name) {
+        var cookieValue = null;
+        if (document.cookie && document.cookie !== "") {
+          var cookies = document.cookie.split(";");
+          for (var i = 0; i < cookies.length; i++) {
+            var cookie = cookies[i].trim();
 
-              if (cookie.substring(0, name.length + 1) === (name + '=')) {
-                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-                break;
-              }
+            if (cookie.substring(0, name.length + 1) === name + "=") {
+              cookieValue = decodeURIComponent(
+                cookie.substring(name.length + 1)
+              );
+              break;
             }
           }
-          return cookieValue
         }
-        var csrftoken = getToken('csrftoken');
-      </script>
+        return cookieValue;
+      }
+      var csrftoken = getToken("csrftoken");
+    </script>
   </body>
 </html>

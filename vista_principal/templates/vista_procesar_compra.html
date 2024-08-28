@@ -9,7 +9,11 @@
 <h2>Datos del cliente y envio</h2>
 
 <div class="cart-container">
-  <form class="formulario">
+<form method="POST">
+    {% csrf_token %}
+    <button type="submit" class="realizar_compra">Finalizar compra</button>
+</form>
+  
     <div class="contenedor-campos">
       <div class="campo">
         <label>Nombre</label>

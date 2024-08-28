@@ -1,6 +1,9 @@
-from django.shortcuts import render
+import stripe
+from django.shortcuts import render, redirect
+from django.contrib import messages
 from .models import *
 from django.http import JsonResponse
+from django.db import transaction
 import json
 
 # Create your views here.
@@ -41,16 +44,43 @@ def vista_detalle_producto(request):
     return render(request, 'vista_detalle_producto.html')
 
 def vista_procesar_compra(request):
-
     cliente = request.user.cliente
     orden, created = Orden.objects.get_or_create(cliente=cliente, completado=False)
+
     items = orden.order_items.all()
-
     total_productos = obtener_total_productos(cliente)
-
     total_carrito = sum([item.get_total for item in items])
 
-    return render(request, 'vista_procesar_compra.html', {'items': items, 'orden': orden, 'total_carrito': total_carrito, 'total_productos': total_productos,})
+    if request.method == 'POST':
+        # Aquí iría la lógica para procesar el pago (omitida por simplicidad)
+
+        try:
+            with transaction.atomic():
+                # Marca la orden como completada
+                orden.completado = True
+                orden.save()
+
+                # Eliminar los artículos del carrito
+                orden.order_items.all().delete()  # Elimina todos los artículos de la orden
+
+            return redirect('vista_inicio')
+
+        except Exception as e:
+            # Manejo de errores
+            messages.error(request, "Error procesando la compra: {}".format(str(e)))
+            return render(request, 'vista_procesar_compra.html', {
+                'items': items,
+                'orden': orden,
+                'total_carrito': total_carrito,
+                'total_productos': total_productos,
+            })
+
+    return render(request, 'vista_procesar_compra.html', {
+        'items': items,
+        'orden': orden,
+        'total_carrito': total_carrito,
+        'total_productos': total_productos,
+    })
 
 def updateItem(request):
     if request.method == 'POST':
@@ -84,8 +114,6 @@ def updateItem(request):
             orden_item.delete()
 
         total_productos = sum(item.cantidad for item in orden.order_items.all())
-
         return JsonResponse({'message': 'Producto actualizado', 'cantidad': orden_item.cantidad, 'total_productos': total_productos})
 
     return JsonResponse({'error': 'Método no permitido'}, status=405)
-    
